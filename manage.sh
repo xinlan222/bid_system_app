@@ -144,6 +144,13 @@ health_check() {
         echo -e "FastAPI:        ${RED}✗ 异常${NC}"
     fi
 
+    # 检查 Next.js 前端
+    if curl -s http://localhost:3000/ &>/dev/null; then
+        echo -e "Next.js 前端:   ${GREEN}✓ 健康${NC}"
+    else
+        echo -e "Next.js 前端:   ${RED}✗ 异常${NC}"
+    fi
+
     echo ""
 }
 
