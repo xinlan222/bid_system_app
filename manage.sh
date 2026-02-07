@@ -47,17 +47,29 @@ check_status() {
         echo -e "FastAPI 后端:   ${RED}已停止${NC}"
     fi
 
+    # Next.js Frontend
+    if systemctl is-active --quiet bid-system-frontend; then
+        echo -e "Next.js 前端:   ${GREEN}运行中${NC}"
+    else
+        echo -e "Next.js 前端:   ${RED}已停止${NC}"
+    fi
+
     echo ""
     print_info "========== 服务端口 =========="
     echo ""
     echo "PostgreSQL:     5432"
     echo "FastAPI 后端:   8000"
-    echo "FastAPI 文档:   http://0.0.0.0:8000/docs"
+    echo "Next.js 前端:   3000"
+    echo ""
+    echo "前端界面:     http://0.0.0.0:3000"
+    echo "后端 API:      http://0.0.0.0:8000"
+    echo "API 文档:      http://0.0.0.0:8000/docs"
     echo ""
 
     print_info "========== 日志查看 =========="
     echo ""
     echo "查看后端日志:  sudo journalctl -u bid-system-backend -f"
+    echo "查看前端日志:  sudo journalctl -u bid-system-frontend -f"
     echo "查看系统日志:  sudo journalctl -f"
     echo ""
 }
