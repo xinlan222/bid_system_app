@@ -2,13 +2,13 @@
 # ruff: noqa: I001, RUF022 - Imports structured for Jinja2 template conditionals
 
 from app.repositories.base import BaseRepository
-
+from app.repositories.bid_document import BidDocumentRepository
 from app.repositories import user as user_repo
-
 from app.repositories import item as item_repo
 
 __all__ = [
     "BaseRepository",
+    "BidDocumentRepository",
     "user_repo",
     "item_repo",
 ]

@@ -69,6 +69,10 @@ def create_app() -> FastAPI:
             "name": "agent",
             "description": "AI agent WebSocket endpoint for real-time chat",
         },
+        {
+            "name": "bid_documents",
+            "description": "Bid document upload and analysis endpoints",
+        },
     ]
 
     app = FastAPI(
@@ -158,6 +162,7 @@ A FastAPI project
                 "api_health": f"{settings.API_V1_STR}/health",
                 "api_users": f"{settings.API_V1_STR}/users",
                 "api_items": f"{settings.API_V1_STR}/items",
+                "api_bid_documents": f"{settings.API_V1_STR}/bid-documents",
             },
             "message": "欢迎使用投标分析系统！请访问 /docs 查看 API 文档",
         }

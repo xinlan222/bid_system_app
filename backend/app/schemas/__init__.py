@@ -3,7 +3,17 @@
 
 from app.schemas.token import Token, TokenPayload
 from app.schemas.user import UserCreate, UserRead, UserUpdate
-
 from app.schemas.item import ItemCreate, ItemRead, ItemUpdate
+from app.schemas.bid_document import (
+    BidDocumentCreate,
+    BidDocumentResponse,
+    BidDocumentUpdate,
+    BidDocumentAnalysis,
+)
 
-__all__ = ['UserCreate', 'UserRead', 'UserUpdate', 'Token', 'TokenPayload', 'ItemCreate', 'ItemRead', 'ItemUpdate']
+__all__ = [
+    'UserCreate', 'UserRead', 'UserUpdate',
+    'Token', 'TokenPayload',
+    'ItemCreate', 'ItemRead', 'ItemUpdate',
+    'BidDocumentCreate', 'BidDocumentResponse', 'BidDocumentUpdate', 'BidDocumentAnalysis',
+]
