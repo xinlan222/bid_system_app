@@ -143,6 +143,25 @@ A FastAPI project
     # Pagination
     add_pagination(app)
 
+    # Root endpoint - Welcome page
+    @app.get("/", tags=["root"])
+    async def root():
+        """Welcome endpoint showing API information."""
+        return {
+            "name": settings.PROJECT_NAME,
+            "version": "0.1.0",
+            "status": "running",
+            "environment": settings.ENVIRONMENT,
+            "endpoints": {
+                "api_docs": "/docs",
+                "api_redoc": "/redoc",
+                "api_health": f"{settings.API_V1_STR}/health",
+                "api_users": f"{settings.API_V1_STR}/users",
+                "api_items": f"{settings.API_V1_STR}/items",
+            },
+            "message": "欢迎使用投标分析系统！请访问 /docs 查看 API 文档",
+        }
+
     return app
 
 
